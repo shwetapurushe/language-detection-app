@@ -39,11 +39,11 @@ cVect = CountVectorizer()
 mnb_model = MultinomialNB()
 
 # # Using a pipeline
-ml_pipeline = Pipeline([('cVectorizer', cVect), ('multinomialNB', mnb_model)])
-ml_pipeline.fit(X_train, y_train)
+# ml_pipeline = Pipeline([('cVectorizer', cVect), ('multinomialNB', mnb_model)])
+# ml_pipeline.fit(X_train, y_train)
 
-pipeline_preds = ml_pipeline.predict(X_test)
-acscore2 = accuracy_score(y_test, pipeline_preds)
+# pipeline_preds = ml_pipeline.predict(X_test)
+# acscore2 = accuracy_score(y_test, pipeline_preds)
 # print(f"Pipeline Score is : {acscore2}")
 
 # packaging the model
@@ -58,8 +58,8 @@ print(f"Loaded model score is  * * * :", accuracy_score(y_test, y_preds))
 
 # input = "Hello, my name is Shweta. What is your name?"
 input = "Wie geht es ihnen?"
-my_y = ml_pipeline.predict([input]) # using pipeline directly
-# my_y = deserialized_model.predict([input]) # loading serialized model
+# my_y = ml_pipeline.predict([input]) # using pipeline directly
+my_y = deserialized_model.predict([input]) # loading serialized model
 print(f"For {input} : the language predicted is * * * {l_encoder.classes_[my_y[0]]}, at index {my_y}")
 
 

@@ -1,4 +1,5 @@
 # for datasets
 *.csv 
 # for ml models
-*.pkl
+*/*.pkl
+*/__pycache__/*
