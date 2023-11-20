@@ -1,10 +1,6 @@
 import re , os
 import pickle
-
-def dataClean(text):
-    text = re.sub(r'[!@#$()\[\],\n"%^*?\:;~`0-9]', ' ', text)
-    text = text.lower()
-    return text
+from app.utils.utils import dataClean, loadTrainedModel, MODELNAME
 
 classes = [
     "Arabic",
@@ -27,10 +23,8 @@ classes = [
 ]
 
 
-# packaging the model
-path = os.path.join(os.getcwd(), 'app', 'model', 'trained_language_detector-0.1.0.pkl')
-
-model = pickle.load(open(path, 'rb'))
+# loading the trained model
+model = loadTrainedModel(MODELNAME)
 
 def predict_pipeline(text_input):
     cleaned_input = dataClean(text_input)
