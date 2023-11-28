@@ -1,5 +1,3 @@
-import re , os
-import pickle
 from app.utils.utils import dataClean, loadTrainedModel, MODELNAME
 
 classes = [
