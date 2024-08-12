@@ -3,3 +3,4 @@
 # for ml models
 *.pkl
 *.pyc
+.DS_Store
